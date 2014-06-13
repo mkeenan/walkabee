@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-Walkabee::Application.config.secret_key_base = ENV['SECRET_KEY_BASE']
+Walkabee::Application.config.secret_key_base = 'bea9158202ef76e67c46d740a457d946a5d0bd572b4f5215cf873596ebc8d656095dfeebb43958d7d72024f846381e0e17706dba8285874bba77ba0f6d5344d8'
