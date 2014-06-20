@@ -4,20 +4,20 @@ def index
     @words = Word.all
   end
 
-  # GET /cars/1
+  # GET /words/1
   def show
   end
 
-  # GET /cars/new
+  # GET /words/new
   def new
     @word = Word.new
   end
 
-  # GET /cars/1/edit
+  # GET /words/edit
   def edit
   end
 
-  # POST /cars
+  # POST /words
   def create
     @word = Word.new(word_params)
     if @word.save
@@ -31,7 +31,7 @@ def index
 private
 
 	def word_params
-		params.require(:word).permit(:title, :image)
+		params.require(:word).permit(:name, :image)
 end
 
 

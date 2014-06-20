@@ -1,0 +1,10 @@
+show.html.erb
+
+<h1>Word up!</h1>
+
+<div>
+	<% @words.each do |w| %>
+		<h3><%= w.name %></h3>
+		<div class= "image"><%= image_tag(w.image) %></div>
+	<%end%>
+</div>

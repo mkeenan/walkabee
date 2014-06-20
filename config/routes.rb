@@ -3,6 +3,10 @@ Walkabee::Application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   resources :words
+  resources :users
+  resources :children
+  resources :categories
+  resources :sessions
 
   # You can have the root of your site routed with "root"
   root 'words#index'
