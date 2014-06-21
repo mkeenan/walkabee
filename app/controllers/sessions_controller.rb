@@ -6,11 +6,11 @@ class SessionsController < ApplicationController
 	def create
 		@user = User.find_by_email(params[:session][:email])
 
-		if @user && @user.authenticate(params[:session][:password])
+		if @user && @user.authenticate(params[:session][:password_digest])
 		  session[:remember_token] = @user.id.to_s
 		  @current_user = @user
 		  flash[:success] = "Welcome!"
-		  redirect_to new_sessions_path
+		  redirect_to root_path
 		else
 		  flash[:error] = "Invalid email/password combination"
 		  render 'new'

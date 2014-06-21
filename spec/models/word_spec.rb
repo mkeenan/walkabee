@@ -14,7 +14,7 @@ describe Word do
 		
 		context 'invalid attributes' do
 			it 'should not be a valid word' do
-				expect(FactoryGirl.build(:word, name: nil)).to be_invalid
+				expect(FactoryGirl.build(:word, name: 'nil')).to be_invalid
 			end
 		end
 

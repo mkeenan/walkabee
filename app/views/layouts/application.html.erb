@@ -27,10 +27,11 @@
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav navbar-right">
           <% if !current_user %>
-            <li><%= link_to "Sign In", new_session_path %></li>
+            <li><%= link_to "Sign In", new_session_path, :class => "signin" %></li>
+            <li><%= link_to "Sign Up", new_user_path, :class => "signin" %></li>
           <% end %>
           <% if current_user %>
-            <li><%= link_to "Sign Out", session_path, :method => :delete %></li>
+            <li><%= link_to "Sign Out", session_path,:class => "signin", :method => :delete %></li>
           <% end %>
         </ul>
       </div>

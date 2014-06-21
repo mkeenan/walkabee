@@ -5,7 +5,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-# Word.create(title: 'Banana', image: 'banana.jpg')
-# Word.create(title: 'Banana', image: 'images/banana.jpg')
-# Word.create(title: 'Banana', image: 'assets/images/banana.jpg')
-# # Word.create(title: 'Banana', image: '../app/assets/images/banana.jpg')
+Word.create(name: 'platano', image: 'banana.jpg')
+Word.create(name: 'manzana', image: 'images/banana.jpg')
+Word.create(name: 'uvas', image: 'assets/images/banana.jpg')
+Word.create(name: 'naranja', image: '../app/assets/images/banana.jpg')
