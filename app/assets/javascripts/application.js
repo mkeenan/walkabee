@@ -15,3 +15,6 @@
 //= require bootstrap 
 //= require_tree .
 
+$(".cont").click(function(){
+ $(this).toggleClass("rotator")  ; 
+})

@@ -1,10 +1,19 @@
+
+
 <div class="container">
-	<div>
-		<% @words.each do |w| %>
-			<h3><%= w.name %></h3>
-			<div class= "image"><%= image_tag(w.image) %></div>
-		<%end%>
+   <h4> Label the items around your home then....click start to play!</h4>
+
+<% @words.each do |w| %>	
+	<div class="row">
+	  <div class="col-md-3"><%= w.name %><%= image_tag(w.image, class: 'image') %></div>
+
+	  <div class="col-md-3"><%= w.name %><%= image_tag(w.image, class: 'image') %></div>
+	  <div class="col-md-3"><%= w.name %><%= image_tag(w.image, class: 'image') %></div>
+	  <div class="col-md-3"><%= w.name %><%= image_tag(w.image, class: 'image') %></div>
+
 	</div>
+<%end%>
+
 </div>
 
 
