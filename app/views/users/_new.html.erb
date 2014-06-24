@@ -1,16 +1,30 @@
-<div class="container-fluid">
-	<%= form_for User.new do |f| %>
+<div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+      </div>
+      <div class="modal-body">
 
-	  <%= f.text_field :email, :placeholder => "email" %>
-	  <br>
-	  <br>
-	  <%= f.text_field :password, :placeholder => "password (at least 6 characters)" %>
-	  <br>
-	  <br>
-		<%= f.text_field :password_confirmation, :placeholder => "password (at least 6 characters)" %>
-	  <br>
-	  <br>
-	  <%= f.submit "Sign up", :class => "top-bar-button" %>
+		<%= form_for User.new, :url => new_user_path do |f| %>
 
-	<% end %>
+		  <%= f.text_field :email, :placeholder => "email" %>
+		  <br>
+		  <br>
+		  <%= f.text_field :password, :placeholder => "password (at least 6 characters)" %>
+		  <br>
+		  <br>
+			<%= f.text_field :password_confirmation, :placeholder => "password (at least 6 characters)" %>
+		  <br>
+		  <br>
+		  <%= f.submit "Sign up", :class => "top-bar-button" %>
+		<% end %>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
 </div>

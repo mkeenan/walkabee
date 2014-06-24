@@ -6,7 +6,7 @@ def index
 
   # GET /words/1
   def show
-    @word = Word.find(params[:id])
+    @words = Word.find(params[:id])
   end
 
   # GET /words/new

@@ -1,12 +1,21 @@
-words#show
+<!-- Clues for individual words and option to practice pronunciation -->
+<h2>Practice Words</h2>
 
-actual scavenger hunt game
-
-<h1>Word up!</h1>
+<h4>Listen:</h4>
 
 <div>
 	<% @words.each do |w| %>
-		<h3><%= w.name %></h3>
-		<div class= "image"><%= image_tag(w.image) %></div>
+		<p><%= w.name %></p>
+		<p><%= w.image %></p>
+		<p><%= w.pronunciation %></p>
 	<%end%>
 </div>
+
+
+<h4>Practice:</h4>
+
+<iframe src="http://vocaroo.com/?minimal" width="525" height="450" frameborder="0"></iframe>
+
+
+
+

@@ -5,7 +5,15 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-Word.create(name: 'platano', image: 'banana.jpg')
-Word.create(name: 'manzana', image: 'images/banana.jpg')
-Word.create(name: 'uvas', image: 'assets/images/banana.jpg')
-Word.create(name: 'naranja', image: '../app/assets/images/banana.jpg')
+Word.create([
+	{ name: 'banana', image: 'banana.png'},
+	{ name: 'manzana', image: 'apple.png'},
+	{ name: 'grapes', image: 'grape.png'},
+	{ name: 'orange', image: 'orange.png'}
+	])
+
+Category.create([
+	{ name: 'Fruit' }
+	{ name: 'Colors' }
+	{ name: 'Family' }
+	])

@@ -1,15 +1,17 @@
 class CategoriesController < ApplicationController
 
 def index
- 	@category = Categories.all
+ 	@categories = Category.all
+ 	@words = Word.all
  end
 
  def new
- 	@categories = Category.new
+
  end
 
  def show
- 	@categories = Category.find(params[:id])
+ 	@category = Category.find(params[:id])
+
  end
 
  def edit
@@ -18,4 +20,10 @@ def index
  def destroy
  end
 
+protected
+
+	def category_params
+		params.require(:category).permit(:name, :image, :video)
+
+	end
 end
