@@ -1,8 +1,13 @@
 class CategoriesController < ApplicationController
 
 def index
- 	@categories = Category.all
- 	@words = Word.all
+	if current_user
+	 	@categories = Category.all
+	 	@words = Word.all
+	else
+		redirect_to root_path
+	end
+
  end
 
  def new
@@ -11,7 +16,6 @@ def index
 
  def show
  	@category = Category.find(params[:id])
-
  end
 
  def edit

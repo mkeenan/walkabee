@@ -12,8 +12,7 @@ class SessionsController < ApplicationController
     else
       session[:remember_token] = @user.id
       @current_user = @user
-      # flash[:success] = "Welcome!"
-      redirect_to root_path
+      redirect_to categories_path
     end
 
   end

@@ -10,10 +10,12 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      flash[:success] = "Welcome to Walkabee!"
-      redirect_to :root
+      # flash[:success] = "Welcome to Walkabee!"
+      session[:remember_token] = @user.id
+      @current_user = @user
+      redirect_to categories_path
     else
-      render :new
+      render root_path
     end
   end
 

@@ -7,7 +7,7 @@
       </div>
       <div class="modal-body">
 
-		<%= form_for User.new, :url => new_user_path do |f| %>
+		<%= form_for User.new do |f| %>
 
 		  <%= f.text_field :email, :placeholder => "email" %>
 		  <br>

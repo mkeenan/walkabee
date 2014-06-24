@@ -7,13 +7,16 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 Word.create([
 	{ name: 'banana', image: 'banana.png'},
-	{ name: 'manzana', image: 'apple.png'},
+	{ name: 'apple', image: 'apple.png'},
 	{ name: 'grapes', image: 'grape.png'},
-	{ name: 'orange', image: 'orange.png'}
+	{ name: 'orange', image: 'orange.png'},
+	{ name: 'watermelon' },
+	{ name: 'grapefruit' },
+	{ name: 'stinkyfruit' }
 	])
 
 Category.create([
-	{ name: 'Fruit' }
-	{ name: 'Colors' }
+	{ name: 'Fruit' },
+	{ name: 'Colors' },
 	{ name: 'Family' }
 	])
