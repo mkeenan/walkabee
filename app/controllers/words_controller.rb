@@ -9,7 +9,8 @@ def index
 
   # GET /words/1
   def show
-    @words = Word.find(params[:id])
+    @word = Word.find_by_name(params[:id])
+    render :layout => 'basic'
   end
 
   # GET /words/new

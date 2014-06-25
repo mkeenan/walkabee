@@ -1,21 +1,10 @@
-words/show
+<h3>Hooray! You found me!</h3>
 
-<h2>Practice Words</h2>
+<%= image_tag @word.image %>
 
-<h4>Listen:</h4>
-
-<div>
-	<% @words.each do |w| %>
-		<p><%= w.name %></p>
-		<p><%= w.image %></p>
-		<p><%= w.pronunciation %></p>
-	<%end%>
+<div class="audio">
+  <%= audio_tag @word.pronunciation, controls: true %>
 </div>
-
-
-<h4>Practice:</h4>
-
-<iframe src="http://vocaroo.com/?minimal" width="525" height="450" frameborder="0"></iframe>
 
 
 

@@ -16,17 +16,23 @@
          <br>
 
          <h4>Select your words:</h4>
-          <select
-            ng-model="selectedWords"
-            ng-options="word.name for word in selectedCategory.words"
-            multiple>
-          </select>
-          <div ng-repeat='word in selectedWords'>
-            {{word.name}}
+           <div class="col-md-4"> 
+            <select
+              ng-model="selectedWords"
+              ng-options="word.name for word in selectedCategory.words"
+              multiple>
+            </select>
+          </div>
+          <div class="col-md-4">
+          </div>
+          <div class="col-md-4" id="selectedwords">
+            <div ng-repeat='word in selectedWords'>
+              {{word.name}}
+            </div>
           </div>
 
          <br>
-
+         <br>
          <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
             Practice Words
          </button>
@@ -40,12 +46,26 @@
 
       <!-- The game -->
       <div class="container" ng-show="startgame">
+        <h3>Find a word that matches the sound, then click to see if it is correct!</h3>
+         
+        <div class="row">
+            <div class="col-md-3" ng-repeat="word in playwords"> 
+              
+              <div class="cont">
 
-          <div class="row">
+                <%= image_tag "kangaroonew.png", class: "gamebox" %>
+                  <div class="info"> <img ng-src="assets/{{ word.image }}" class='image'/>
+                  </div>
+              </div>
+
+            </div>
+
+
+<!--           <div class="row">
             <div class="col-md-3" ng-repeat="word in playwords">
               <img ng-src="assets/{{ word.image }}" class='image'/>
             </div>
-          </div>
+          </div> -->
 
       </div>
 
@@ -94,32 +114,26 @@
           <div class="modal-content">
             <div class="modal-header">
               <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-              <h4 class="modal-title" id="myModalLabel">
+              <h3 class="modal-title" id="myModalLabel">
                 Game Instructions
-              </h4>
+              </h3>
             </div>
             <div class="modal-body">
               <h4>
-                1. Place kangaroo word tags around your home, close to the items on your word list. Be sure the kangaroo is facing up!
+                1. Place kangaroo word tags on the word items.
               </h4>
               <h4>
-                2. Click the audio link for the first colored box to listen to the word.
+                2. Click a box to hear the word.
               </h4>
               <h4>
-                3. Begin the game and let the kids run around looking for each clue, one at a time. 
+                3. Start the game! GO! Shout out clues if needed!
               </h4>
               <h4>
-                4. Prepare to give clues to your child. Use clues that will be familiar to them. Example: For the word banana (platano). "It is yellow! We eat it for breakfast! Monkeys like these very much!""
+                5. When the card is found, scan it to see if it's correct.
               </h4>
               <h4>
-                5. When they find their first card, have them pick it up and run it back to you. Scan the card to see if they are correct!
+                6. When the game is done, click on the final kangaroo tag to celebrate!
               </h4>
-              <h4>
-                6. Repeat until the game is done and receive a surprise song to celebrate the completion of the game!
-              </h4>
-             <button class="btn btn-primary btn-lg">
-              Play Game
-             </button>
           </div>
         </div>
       </div>
