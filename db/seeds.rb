@@ -15,10 +15,10 @@ family = Category.create(name: 'Family')
 
 
 Word.create([
-	{ name: 'banana', image: 'banana.png', category: fruit },
-	{ name: 'apple', image: 'apple.png', category:  fruit },
-	{ name: 'grapes', image: 'grape.png', category:  fruit },
-	{ name: 'orange', image: 'orange.png', category:  fruit },
+	{ name: 'banana', image: 'banana.png', pronunciation: 'platano.mp3', category: fruit },
+	{ name: 'apple', image: 'apple.png', pronunciation: 'manzana.mp3', category:  fruit },
+	{ name: 'grapes', image: 'grape.png', pronunciation: 'uvas.mp3', category:  fruit },
+	{ name: 'orange', image: 'orange.png', pronunciation: 'naranja.mp3', category:  fruit },
 	{ name: 'grapefruit', category: fruit },
 	{ name: 'watermelon', category: fruit },
 	{ name: 'red', category: colors },

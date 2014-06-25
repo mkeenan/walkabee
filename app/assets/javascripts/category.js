@@ -1,4 +1,4 @@
-var Walkabee = angular.module('Walkabee', ['ngResource' ]).config(
+var Walkabee = angular.module('Walkabee', ['ngResource']).config(
     ['$httpProvider', function($httpProvider) {
     var authToken = angular.element("meta[name=\"csrf-token\"]").attr("content");
     var defaults = $httpProvider.defaults.headers;
@@ -10,29 +10,28 @@ var Walkabee = angular.module('Walkabee', ['ngResource' ]).config(
 }]);
 
 Walkabee.factory('Category', ['$resource', function($resource) {
-  return $resource('/category/:id',
+  return $resource('/categories/:id',
     {id: '@id'},
     {update: { method: 'PATCH'}});
 }]);
 
-Walkabee.factory('Word', ['$resource', function($resource) {
-  return $resource('/word/:id',
-    {id: '@id'},
-    {update: { method: 'PATCH'}});
-}]);
 
-Walkabee.controller('CategoryCtrl', ['category', '$scope', function(Category, $scope) {
+Walkabee.controller('CategoryCtrl', ['Category', '$scope', '$sce', function(Category, $scope, $sce) {
   $scope.categories= [];
 
   Category.query(function(categories) {
     $scope.categories = categories;
   });
-}]);
 
-Walkabee.controller('WordCtrl', ['word', '$scope', function(Word, $scope) {
-  $scope.words= [];
+  $scope.trustSource = function(source) {
+        return $sce.trustAsResourceUrl('assets/' + source );
+    }
 
-  Word.query(function(words) {
-    $scope.words = selected.category.words;
-  });
+  $scope.playgame = function(playwords) {
+    console.log(playwords);
+    $scope.startgame = true;
+    $scope.playwords = playwords;
+  }
+
+
 }]);

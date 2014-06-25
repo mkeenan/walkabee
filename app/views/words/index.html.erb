@@ -1,3 +1,5 @@
+Not using...check routes
+
 <div>
     <div x-ng-controller="CategoryCtrl">
 
@@ -5,11 +7,11 @@
 
 		<% @words.each do |w| %>	
 			<div class="row">
-			  <div class="col-md-3"><%= w.name %><%= image_tag(w.image, class: 'image') %></div>
+			  <div class="col-md-3"><%= image_tag(w.image, class: 'image') %></div>
 
+			  <div class="col-md-3"><%= image_tag(w.image, class: 'image') %></div>
 			  <div class="col-md-3"><%= w.name %><%= image_tag(w.image, class: 'image') %></div>
-			  <div class="col-md-3"><%= w.name %><%= image_tag(w.image, class: 'image') %></div>
-			  <div class="col-md-3"><%= w.name %><%= image_tag(w.image, class: 'image') %></div>
+			  <div class="col-md-3"><%= image_tag(w.image, class: 'image') %></div>
 
 			</div>
 		<%end%>
