@@ -12,9 +12,8 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require bootstrap 
+//= require angular
+//= require angular-resource
+//= require angular-strap
 //= require_tree .
 
-$(".cont").click(function(){
- $(this).toggleClass("rotator")  ; 
-})

@@ -1,7 +1,10 @@
 class WordsController < ApplicationController
 
+respond_to :json, :html
+
 def index
     @words = Word.all
+    respond_with @words
   end
 
   # GET /words/1
@@ -32,7 +35,7 @@ def index
 private
 
 	def word_params
-		params.require(:word).permit(:name, :image)
+		params.require(:word).permit(:name, :image, :category_id)
 end
 
 

@@ -47,7 +47,11 @@ body {
 }
 
 .welcome {
+	display: inline;
 	margin: 0 auto;
+	font-weight: bold;
+	text-shadow: 1px 1px #E9AD6F;
+	text-align: center;
 }
 
 .container {
@@ -65,6 +69,11 @@ h1 {
 	font-weight: bold;
 }
 
+h2 {
+	color: #2549DF;
+	text-align: center;
+}
+
 a.title {
 	font-family: 'Unkempt', cursive !important;
 	color: white;
@@ -80,12 +89,13 @@ a.title {
 	text-decoration: none;
 }
 
-.boxes {
-  width: 70px;
-  height: 70px;
-  border-radius: 20px;
-  border: 3px solid;
+.col-md-3 {
+  padding: 20px;
+  width: 200px;
+  height: 200px;
+  border-radius: 10px;
+  border: 1px solid;
   border-color: gray;
-  font-size: 50px;
+  font-size: 20px;
   float: left;
 }

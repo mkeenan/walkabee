@@ -12,6 +12,7 @@ gem 'pg'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.2'
 gem 'bootstrap-sass', '~> 3.1'
+gem 'angular-strap-rails'
 # gem 'font-awesome-less'
 
 # Use Uglifier as compressor for JavaScript assets
@@ -26,9 +27,9 @@ gem 'coffee-rails', '~> 4.0.0'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 
-# gem 'active_model_serializers'
+gem 'active_model_serializers'
 
-# gem 'angularjs-rails'
+gem 'angularjs-rails'
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 # gem 'turbolinks'

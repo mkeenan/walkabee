@@ -5,18 +5,27 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-Word.create([
-	{ name: 'banana', image: 'banana.png'},
-	{ name: 'apple', image: 'apple.png'},
-	{ name: 'grapes', image: 'grape.png'},
-	{ name: 'orange', image: 'orange.png'},
-	{ name: 'watermelon' },
-	{ name: 'grapefruit' },
-	{ name: 'stinkyfruit' }
-	])
+Word.destroy_all
+Category.destroy_all
 
-Category.create([
-	{ name: 'Fruit' },
-	{ name: 'Colors' },
-	{ name: 'Family' }
+
+fruit = Category.create(name: 'Fruit')
+colors = Category.create(name: 'Colors')
+family = Category.create(name: 'Family')
+
+
+Word.create([
+	{ name: 'banana', image: 'banana.png', category: fruit },
+	{ name: 'apple', image: 'apple.png', category:  fruit },
+	{ name: 'grapes', image: 'grape.png', category:  fruit },
+	{ name: 'orange', image: 'orange.png', category:  fruit },
+	{ name: 'grapefruit', category: fruit },
+	{ name: 'watermelon', category: fruit },
+	{ name: 'red', category: colors },
+	{ name: 'blue', category: colors },
+	{ name: 'yellow', category: colors },
+	{ name: 'mother', category: family },
+	{ name: 'father', category: family },
+	{ name: 'brother', category: family },
+	{ name: 'sister', category: family },
 	])

@@ -1,79 +1,94 @@
-<div class="container">
-   <h2>Prepare for the Hunt!</h2>
-   <br>
+<div x-ng-app=”Walkabee”>
+    <div x-ng-controller="CategoryCtrl">
+      <div class="container">
+         <h2>Prepare for the Hunt!</h2>
+         <br>
 
-   Language:
-   <select name="Language">
-      <option>English</option>
-      <option>Spanish</option>
-   </select>
+         Language:
+         <select name="Language">
+            <option>English</option>
+            <option>Spanish</option>
+         </select>
 
-   Category:
+         Category:
 
-   <%= select_tag "Category", options_from_collection_for_select(@categories, "id", "name") %>
+         <%= select_tag "Category", options_from_collection_for_select(@categories, "id", "name") %>
 
-   <br>
+         <br>
 
-   <h4>Select your words:</h4>
-   <%#= select_tag "Words", options_from_collection_for_select(@words, "id", "name") %>
+         <h4>Select your words:</h4>
 
-   <%= select_tag "Words[]", options_for_select(@words.collect{|w| [w.name,w.id]}), {:multiple => :multiple, :size => 10} %>
+         <%= select_tag "Words[]", options_for_select(@words.collect{|w| [w.name,w.id]}), {:multiple => :multiple, :size => 10} %>
 
-   <br>
-   <br>
-   <!-- Button trigger modal -->
-   <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-      Practice
-   </button>
+         <br>
+         <br>
+         <!-- Button trigger modal -->
+         <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+            Practice
+         </button>
 
-   <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal3">
+         <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal3">
 
-      Play the Game!
-   </button>
+            Play
+         </button>
 
-</div>
-
-<!-- Modal -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h4 class="modal-title" id="myModalLabel">Preview and Practice</h4>
       </div>
-      <div class="modal-body">
-          
-          <h4>Listen:</h4>
-          <div>
-            <% @words.each do |w| %>
-              <p><%= w.name %></p>
-              <p><%= w.image %></p>
-              <p><%= w.pronunciation %></p>
-            <%end%>
+
+      <!-- Modal -->
+      <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+              <h4 class="modal-title" id="myModalLabel">Preview and Practice</h4>
+            </div>
+            <div class="modal-body">
+                
+                <h4>Listen:</h4>
+                <div>
+                  <% @words.each do |w| %>
+                    <p><%= w.name %></p>
+                    <p><%= w.image %></p>
+                    <p><%= w.pronunciation %></p>
+                  <%end%>
+                </div>
+                
+                <h4>Practice:</h4>
+
+                <iframe src="http://vocaroo.com/?minimal" width="525" height="240" frameborder="0"></iframe>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
           </div>
-          
-          <h4>Practice:</h4>
-
-          <iframe src="http://vocaroo.com/?minimal" width="525" height="240" frameborder="0"></iframe>
+        </div>
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+
+      <!-- pop-up window showing game instructions -->
+      <div class="modal fade" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+              <h4 class="modal-title" id="myModalLabel">Game Instructions</h4>
+            </div>
+            <div class="modal-body">
+              
+                <h4>1. Place kangaroo word tags around your home, close to the items on your word list. Be sure the kangaroo is facing up!</h4>
+                <h4>2. Click the audio link for the first colored box to listen to the word.
+                <h4>3. Begin the game and let the kids run around looking for each clue, one at a time. 
+                <h4>4. Prepare to give clues to your child. Use clues that will be familiar to them. Example: For the word banana (platano). "It is yellow! We eat it for breakfast! Monkeys like these very much!""
+                <h4>5. When they find their first card, have them pick it up and run it back to you. Scan the card to see if they are correct!
+                <h4>6. Repeat until the game is done and receive a surprise song to celebrate the completion of the game!</h4>
+
+           <button class="btn btn-primary btn-lg">
+
+            Play the Game!
+           </button>
+
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-</div>
-
-<!-- pop-up window showing game instructions -->
-<div class="modal fade" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h4 class="modal-title" id="myModalLabel">Instructions</h4>
-      </div>
-      <div class="modal-body">
-          <h4>Practice:</h4>
-      </div>
-    </div>
-  </div>
-</div>

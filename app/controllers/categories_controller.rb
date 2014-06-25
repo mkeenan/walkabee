@@ -1,9 +1,12 @@
 class CategoriesController < ApplicationController
 
+respond_to :json, :html
+
 def index
 	if current_user
 	 	@categories = Category.all
 	 	@words = Word.all
+	 	respond_with @categories
 	else
 		redirect_to root_path
 	end
