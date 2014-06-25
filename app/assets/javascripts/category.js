@@ -1,4 +1,4 @@
-var Walkabee = angular.module('Walkabee', ['ngResource']).config(
+var Walkabee = angular.module('Walkabee', ['ngResource' ]).config(
     ['$httpProvider', function($httpProvider) {
     var authToken = angular.element("meta[name=\"csrf-token\"]").attr("content");
     var defaults = $httpProvider.defaults.headers;
@@ -21,18 +21,18 @@ Walkabee.factory('Word', ['$resource', function($resource) {
     {update: { method: 'PATCH'}});
 }]);
 
-Walkabee.controller('CategoryCtrl', [‘category', '$scope', function(Category, $scope) {
+Walkabee.controller('CategoryCtrl', ['category', '$scope', function(Category, $scope) {
   $scope.categories= [];
 
   Category.query(function(categories) {
     $scope.categories = categories;
-  }])
+  });
+}]);
 
-
-Walkabee.controller('WordCtrl', [‘word', '$scope', function(Word, $scope) {
+Walkabee.controller('WordCtrl', ['word', '$scope', function(Word, $scope) {
   $scope.words= [];
 
   Word.query(function(words) {
-    $scope.words = words;
+    $scope.words = selected.category.words;
   });
-}])
+}]);

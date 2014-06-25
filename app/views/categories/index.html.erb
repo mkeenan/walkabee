@@ -12,6 +12,13 @@
 
          Category:
 
+         <select
+            ng-model="Category"
+            ng-options="category.id as category.name for category in categories">
+            <option>Fruit</option>
+            <option>Family</option>
+          </select>
+
          <%= select_tag "Category", options_from_collection_for_select(@categories, "id", "name") %>
 
          <br>
