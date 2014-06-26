@@ -1,71 +1,74 @@
 <div x-ng-app="Walkabee">
   <div x-ng-controller="CategoryCtrl">
     <div class="container selecting-box" ng-hide="startgame">
+      <div class="col-md-10">
       <h2>Prepare for the Hunt!</h2>
+      </div>
+      <div class="col-md-2">
+        <span>      
+          <button id="instructionsbutton" class="glyphicon glyphicon-question-sign" data-toggle="modal" data-target="#myModal4">
+          </button>
+        </span>
+      </div>
       <br>
-      Language:
-      <select name="Language">
-        <option>English</option>
-        <option>Spanish</option>
-      </select>
-      Category:
+      <h4>Language:</h4>
+        <select name="Language">
+          <option>English</option>
+          <option>Spanish</option>
+        </select>
+      <h4>Category:</h4>
       <select ng-model="selectedCategory" ng-options="category.name for category in categories"> 
       </select>
       <br>
-
       <h4>Select your words:</h4>
-      <div class="col-md-4"> 
-        <select ng-model="selectedWords" ng-options="word.name for word in selectedCategory.words" multiple>
+      <div class="col-md-4" id="wordoptions"> 
+        <select id="wordselect" ng-model="selectedWords" ng-options="word.name for word in selectedCategory.words" multiple>
         </select>
       </div>
       <div class="col-md-4">
+        <span class="glyphicon glyphicon-chevron-right"></span>
       </div>
       <div class="col-md-4" id="selectedwords">
         <div ng-repeat='word in selectedWords'>
           {{word.name}}
         </div>
       </div>
-
       <br>
-      <br>
-      <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal3">
+      <button id="practicebutton" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal3">
         Practice Words
       </button>
-      <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal4">
-        Game Instructions
-      </button>
-      <button ng-click="playgame(selectedWords)" class="btn btn-primary btn-lg">
+
+      <button id="playbutton" ng-click="playgame(selectedWords)" class="btn btn-primary btn-lg">
         Play Game
       </button>
     </div>
 
     <!-- The game -->
     <div class="container" ng-show="startgame">
-      <h3>Find a word that matches the sound, then click to see if it is correct!</h3>
+      <h3>1. Listen 2. Find 3. Flip!</h3>
 
       <div class="row">
-        <div class="col-md-3" ng-repeat="word in playwords"> 
-
-          <div class="cont">
-
-            <%= image_tag "kangaroonew.png", class: "gamebox" %>
-            <div class="info"><img ng-src="assets/{{ word.image }}" class='image'/>
-            </div>
-          </div>
-
-        </div>
 
 
-<!--           <div class="row">
-            <div class="col-md-3" ng-repeat="word in playwords">
-              <img ng-src="assets/{{ word.image }}" class='image'/>
-            </div>
-          </div> -->
-
+          <div class="flip" ng-repeat="word in playwords"> 
+              <div class="card col-md-3"
+              ng-class="{'flipped':isFlipped}" 
+              ng-click="isFlipped=!isFlipped"> 
+                  <div class="face front"> 
+                      <%= image_tag "kangaroonew.png", class: "gamebox" %>
+                  </div> 
+                  <div class="face back"> 
+                      <img ng-src="assets/{{ word.image }}" class='image'/>
+                  </div> 
+              </div> 
+          </div> 
+        
       </div>
+      <a class="btn btn-primary" <%= link_to "Prepare for Hunt", categories_path %></a>
     </div>
 
-      <!-- Modal -->
+
+    <!-- The game -->
       <div class="modal fade" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel3" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
@@ -95,7 +98,7 @@
               
               <h4>Practice:</h4>
 
-              <iframe src="http://vocaroo.com/?minimal" width="525" height="240" frameborder="0"></iframe>
+              <iframe src="http://vocaroo.com/?minimal" width="525" height="200" frameborder="0"></iframe>
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

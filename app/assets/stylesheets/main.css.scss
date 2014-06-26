@@ -45,12 +45,12 @@ body.basic {
 	background: none;
 }
 .kangaroo {
-	float: left;
+
 	margin: 0 0 0 300px;
 }
 
 .welcome {
-	display: inline;
+
 	text-align: center;
 	margin: 0 auto;
 	font-weight: bold;
@@ -73,7 +73,7 @@ h1 {
 	font-weight: bold;
 }
 
-h2 {
+h2, h3 {
 	color: #2549DF;
 }
 
@@ -92,61 +92,93 @@ a.title {
 	text-decoration: none;
 }
 
+.glyphicon {
+	font-size: 40px;
+	color: #943517;
+	margin: 25px;
+}
+
+#selectedwords {
+	border: 2px solid black;
+	height: 80px;
+	width: 200px;
+	margin-right: 10px;
+}
+
+#wordselect {
+	border: 2px solid black;
+	height: 80px;
+	width: 200px;
+}
+
+.practicebutton {
+	border: 1px red;
+}
+
+.instructionsbutton {
+	background-color:rgba(255,255,255,0.8);
+	font-size: 20px;
+}
+
+.playbutton {
+	border: 1px blue;
+}
+
 .col-md-3 {
   padding: 20px;
   width: 200px;
   height: 200px;
   border-radius: 10px;
-  border: 1px solid;
-  border-color: gray;
   font-size: 20px;
   float: left;
-}
-
-#selectedwords {
-	border: 1px solid black;
-}
-
-.info, .gamebox{
-    position:absolute;
-    -webkit-transition: -webkit-transform 1s , z-index 0s 0.25s;
-    
-}
-
-.info{padding:10px;
-    width: 160px;
-    height: 160px;
-    z-index: -2;
-    -webkit-transform: rotateY(180deg);   
-    background-color: rgba(255,255,255,0.8);
-    
 }
 
 .gamebox{
 	width: 190px;
 	height: 190px;
-    z-index: -1;   
-    -webkit-transition: -webkit-transform 1s, z-index 0s 0.25s;
-    -webkit-transform: rotateY(0deg);   
+    background-color: #2549DF;  
 }
 
-.rotator{
-     
-    width:160px;   
-    height: 160px;
+.flip {
+	-webkit-perspective: 800;
+	width: 200px;
+	height: 205px;
+	position: relative;
+	margin: 10px;
+	float: left;
 }
-
-.rotator .info{
-    -webkit-transition: -webkit-transform 1s, z-index 0s 0.25s;
-    z-index: -1;
-    -webkit-transform: rotateY(0deg);   
-
+.flip .card.flipped {
+  -webkit-transform: rotatex(-180deg);
 }
-.rotator  .gamebox{
-    -webkit-transform: rotateY(180deg);   
-    -webkit-transition: -webkit-transform 1s, z-index 0s 0.25s;;
-    z-index: -2;
+.flip .card {
+  width: 100%;
+  height: 100%;
+  -webkit-transform-style: preserve-3d;
+  -webkit-transition: 0.5s;
 }
-
-
-
+.flip .card .face {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  -webkit-backface-visibility: hidden ;
+  z-index: 2;
+    font-family: Georgia;
+    font-size: 3em;
+    text-align: center;
+    line-height: 200px;
+}
+.flip .card .front {
+	position: absolute;
+	z-index: 1;
+    color: white;
+    cursor: pointer;
+    margin-top: -37px;
+}
+.flip .card .back {
+  -webkit-transform: rotatex(-180deg);
+    color: black;
+    cursor: pointer;
+    background-color: white;
+    width: 190px;
+	height: 190px;
+}

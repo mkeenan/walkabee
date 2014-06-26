@@ -1,11 +1,15 @@
-<h3>Hooray! You found me!</h3>
-
-<%= image_tag @word.image %>
-
-<div class="audio">
-  <%= audio_tag @word.pronunciation, controls: true %>
+<div class = "container-fluid" style="text-align:center;">
+	<div class="col-md-2">
+		<%= image_tag "kangaroonew.png", class: "image" %>
+	</div>
+	<div class="col-md-10">
+		<h3>Hooray! You found me!</h3>
+	</div>
+		<%= image_tag @word.image %>
+		<div class="audio">
+		  <%= audio_tag @word.pronunciation, controls: true %>
+		</div>
 </div>
-
 
 
 
