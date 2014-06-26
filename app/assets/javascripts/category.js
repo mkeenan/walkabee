@@ -1,9 +1,3 @@
-$(document).ready(function(){
-$(".cont").click(function(){
- $(this).toggleClass("rotator")  ; 
-});
-});
-
 var Walkabee = angular.module('Walkabee', ['ngResource']).config(
     ['$httpProvider', function($httpProvider) {
     var authToken = angular.element("meta[name=\"csrf-token\"]").attr("content");
