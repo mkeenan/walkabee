@@ -59,7 +59,7 @@ body.basic {
 }
 
 .container {
-	min-height: 80%;
+	min-height: 450px;
 	width: 80%;
 	margin-top: 50px;
 	padding: 10px;
@@ -113,6 +113,7 @@ a.title {
 
 .practicebutton {
 	border: 1px red;
+	display:inline-block;
 }
 
 .instructionsbutton {
@@ -122,6 +123,15 @@ a.title {
 
 .playbutton {
 	border: 1px blue;
+	display:inline-block;
+}
+
+.audio {
+	width: 200px !important;
+}
+
+.audioplayer {
+	width: 100%;
 }
 
 .col-md-3 {
