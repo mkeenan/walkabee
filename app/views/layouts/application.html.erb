@@ -1,3 +1,4 @@
+<!-- includes elements(i.e. navigation) that apply to each page in the app -->
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,7 +13,6 @@
 <body>
     <nav class="navbar navbar-default" role="navigation">
     <div class="container-fluid">
-      <!-- Brand and toggle get grouped for better mobile display -->
       <div class="navbar-header">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
           <span class="sr-only">Toggle navigation</span>
@@ -40,7 +40,6 @@
                 Sign Up
                 </a>
               </li>
-
             <% end %>
             <% if current_user %>
               <li><%= link_to "Sign Out", session_path(session),:class => "signin", :method => :delete %></li>
@@ -48,12 +47,12 @@
           </ul>
         </div>
       </div>
-    </nav>
-        
-      <%= yield %>
-      <%= render partial: 'sessions/new' %>
-      <%= render partial: 'users/new' %>
-</body>
+    </nav>        
+    <%= yield %>
 
+    <!-- these render modals for signin(myModal) and signup(myModal2) partials -->
+    <%= render partial: 'sessions/new' %>
+    <%= render partial: 'users/new' %>
+</body>
 
 </html>

@@ -1,10 +1,14 @@
 <div x-ng-app="Walkabee">
   <div x-ng-controller="CategoryCtrl">
+
+    <!-- use ng-hide & later ng-show to toggle between Prepare for your Walkabout and Play Game in the same container -->
     <div class="container selecting-box" ng-hide="startgame">
       <div class="col-md-10">
-      <h2>Prepare for your Walkabout!</h2>
+        <h2>Prepare for your Walkabout!</h2>
       </div>
       <div class="col-md-2">
+        
+        <!-- Game instructions modal(myModal4) -->
         <span>      
           <button id="instructionsbutton" class="glyphicon glyphicon-question-sign" data-toggle="modal" data-target="#myModal4">
           </button>
@@ -12,17 +16,22 @@
       </div>
       <br>
       <div class="col-md-6">
+        
+        <!-- Language selection for display only. Needs to be incorporated into future functionality -->
         <h3>1. Choose language and category</h3>
       <h4>Language:</h4>
         <select name="Language">
           <option>Spanish</option>
         </select>
+
+      <!-- ng-options drop-down to select a category. This selected category will drive future word options -->
       <h4>Category:</h4>
         <select ng-model="selectedCategory" ng-options="category.name for category in categories"> 
         </select>
       </div>
       <br>
 
+      <!-- words in this ng-options select box are made available depending on the category selected previously -->
       <div class="col-md-6" id="wordoptions"> 
         <h3>2. Select your words:</h3>
         <select id="wordselect" ng-model="selectedWords" ng-options="word.name for word in selectedCategory.words" multiple>
@@ -30,22 +39,24 @@
       </div>
       <br>
       <br>
+
+      <!-- displays words being selected from the drop-down -->
       <div class="col-md-6" id="selectedwords">
         <div ng-repeat='word in selectedWords'>
           {{word.name}}
         </div>
       </div>
       <br>
+
+      <!-- To be revised...option to open a modal for the Learn/practicebutton section will be converted from a modal(myModal3) to a view in the words folder -->
       <div class="col-md-12">
         <h3>3. Learn or Play!</h3>
         <button id="practicebutton" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal3"> Learn</button>
         <button id="playbutton" ng-click="playgame(selectedWords)" class="btn btn-primary btn-lg"> Play</button>
       </div>
-
-     
     </div>
 
-    <!-- The game -->
+    <!-- Walkabee game shows up using ng-show. Flipping cards functionality occurs and an html5 audio player is used to play audio files for pronunciation. -->
     <div class="container" ng-show="startgame">
       <h3>1. Listen 2. Find 3. Flip!</h3>
       <br>
@@ -53,6 +64,8 @@
           <div class="flip" ng-repeat="word in playwords"> 
               <div class="audio">
                   <audio controls class="audioplayer">
+
+                    <!-- Note that needed to designate "trustSource" before the mp3 file because of Strict Contextual Escaping in Angular ($sce). SCE only applies to interpolation expressions. -->
                     <source ng-src="{{ trustSource(word.pronunciation) }}"
                     type="audio/mpeg" />
                   </audio>
@@ -77,7 +90,7 @@
     </div>
 
 
-    <!-- Learn Words -->
+    <!-- This is the modal(myModal3) that will be converted to a view in the words folder instead of a modal. Contains images and audio files. Also contains a widget for record & playback of your own voice for pronunciation practice. -->
       <div class="modal fade" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel3" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
@@ -105,6 +118,7 @@
                 
               </div>
               
+              <!-- Vocaroo widget used for pronunciation practice. -->
               <h3>Practice:</h3>
 
               <iframe src="http://vocaroo.com/?minimal" width="525" height="200" frameborder="0"></iframe>
@@ -116,7 +130,7 @@
         </div>
       </div>
 
-      <!-- pop-up window showing game instructions -->
+      <!-- Modal(myModal4) displaying game instructions -->
       <div class="modal fade" id="myModal4" tabindex="-1" role="dialog" aria-labelledby="myModalLabel4" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">

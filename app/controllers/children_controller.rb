@@ -1,3 +1,5 @@
+# created to implement future functionality involving children
+
 class ChildrenController < ApplicationController
  
   def index

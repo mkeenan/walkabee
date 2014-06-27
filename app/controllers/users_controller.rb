@@ -1,8 +1,5 @@
 class UsersController < ApplicationController
 
-  def index
-  end
-
   def new
     @user = User.new
   end
@@ -10,7 +7,6 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      # flash[:success] = "Welcome to Walkabee!"
       session[:remember_token] = @user.id
       @current_user = @user
       redirect_to categories_path
@@ -19,11 +15,6 @@ class UsersController < ApplicationController
     end
   end
 
-  def show
-  end
-
-  def edit
-  end
 
 protected
 

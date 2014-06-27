@@ -7,7 +7,6 @@ class SessionsController < ApplicationController
     @user = User.where(:email => params[:session][:email]).first
 
     if @user == nil || !@user.authenticate(params[:session][:password])
-      # flash[:error] = "Not working...try again."
       render 'new'
     else
       session[:remember_token] = @user.id

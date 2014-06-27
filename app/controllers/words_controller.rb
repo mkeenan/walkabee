@@ -7,22 +7,16 @@ def index
     respond_with @words
   end
 
-  # GET /words/1
   def show
     @word = Word.find_by_name(params[:id])
     render :layout => 'basic'
   end
 
-  # GET /words/new
+# new/create not being used in this version. Set up for future functionality.
   def new
     @word = Word.new
   end
 
-  # GET /words/edit
-  def edit
-  end
-
-  # POST /words
   def create
     @word = Word.new(word_params)
     if @word.save

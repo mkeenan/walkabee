@@ -1,4 +1,4 @@
-
+<!-- partial form for sign in being rendered in layouts#application -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -7,18 +7,15 @@
         <h4 class="modal-title" id="myModalLabel">Modal title</h4>
       </div>
       <div class="modal-body">
-
-		<%= form_for :session, :url => sessions_path do |f| %>
-
-		  <%= f.text_field :email, :placeholder => "email" %>
-		  <br>
-		  <br>
-		  <%= f.password_field :password, :placeholder => "password" %>
-		  <br>
-		  <br>
-		  <%= f.submit "Sign in", :class => "loginButton" %>
-		<% end %>
-
+    		<%= form_for :session, :url => sessions_path do |f| %>
+    		  <%= f.text_field :email, :placeholder => "email" %>
+    		  <br>
+    		  <br>
+    		  <%= f.password_field :password, :placeholder => "password" %>
+    		  <br>
+    		  <br>
+    		  <%= f.submit "Sign in", :class => "loginButton" %>
+    		<% end %>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

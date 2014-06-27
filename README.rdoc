@@ -1,27 +1,14 @@
 == README
 
-Walkabee is a 
+Walkabee is an immersive language learning program created for toddlers and their caregivers. It is designed with the option of extending the game beyond the web application to incorporate the use of flash cards with an NFC tag that can be read by an NFC-enabled mobile device.
 
-Things you may want to cover:
+It is built using Rails 4.0.4, Angular JS and Boostrap. It includes authentication using BCrypt 3.1.2 and the Vocaroo record/playback widget.
 
-* Ruby version
+Important source files:
 
-* System dependencies
+- "category.js": Includes Angular controller.
+- "main.css.scss": Main file with styling for the application.
+- "categories/index.html.erb": File containing the majority of the source code for the views.
+- "layouts/basic.html.erb" and "words/show.index.html.erb": Files currently used to display the views used with the NFC-enabled extension to the game.
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+Note: It is a work in progress. Code pertaining to the child and child_word models are not currently being utilized. They will be included in future functionality. 
