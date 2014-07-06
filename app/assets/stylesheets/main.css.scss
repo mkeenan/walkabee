@@ -38,11 +38,16 @@ body {
 
 body.basic {
 	background: none;
+	background-color: #2549DF;
 }
 
 .kangaroo {
 
-	margin: 0 0 0 300px;
+	margin: 0 auto;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 50px;
 }
 
 .welcome {
